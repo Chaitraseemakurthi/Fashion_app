@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="assets/styles/home.css" />
+    <link rel="stylesheet" href="assets/styles/productdetail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="index.html">Fashion App</a>
+    </div>
+    <ul class="navbar-nav">
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item"><a href="shop.html?categ=men_all">Men</a></li>
+      <li class="nav-item"><a href="shop.html?categ=ladies_all">Women</a></li>
+      <li class="nav-item"><a href="shop.html?categ=kids_all">Kids</a></li>
+    </ul>
+    <div class="navbar-icons">
+      <label>
+        <div class="searchcont">
+          <div class="imgcont" onclick="search()">
+            <img width="24" height="24" src="assets/icons/icon-search.png" alt="search" />
+          </div>
+          <input placeholder="Search" id="searchInput" class="inptext" value="" />
+        </div>
+      </label>
+      <div class="icons">
+        <div class="icon-item">
+          <a href="wishlist.html">
+            <img width="20" height="20" src="https://img.icons8.com/ios/50/like--v1.png" alt="like--v1" />
+          </a>
+        </div>
+        <div class="icon-item">
+          <a href="cart.html">
+            <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/50/shopping-cart--v1.png" alt="shopping-cart--v1" />
+          </a>
+        </div>
+        <div class="icon-item">
+          <a href="recentorders.html">
+            <img width="20" height="20" src="https://img.icons8.com/ios/50/delivery--v1.png" alt="delivery--v1"/>
+          </a>
+        </div>
+        <div class="icon-item">
+          <a href="user.html">
+            <i class="fa-regular fa-user" style="font-size: 20px; color: black;" ></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+      <div class="supercontainer">
+        <div class="subsuper-container">
+            <div class="content">
+                <div class="images" id="imageContainer">
+            
+                </div>
+            </div>
+          
+          <div class="price">
+            <Button onclick="Toggle1()" id="btnh1" class="btn"><i class="fas fa-heart"></i></Button>
+            <div class="product-detail-container">
+                <div class="product-info">
+                    <h1 id="productName"></h1>
+                    <p class="product-price" id="productPrice"></p>
+                    <p id="productDescription"></p>
+                    <p style="font-weight: 600;color: #8e8f8f;">Delivery in 2-7 days</p>
+
+    <h3>Select size</h3>
+    <div class="size-options">
+    </div>
+    <div style="display: flex;flex-direction: row;padding: 5px;">
+      <div class="iconitem">
+        <img width="24" height="24" src="https://img.icons8.com/forma-light/24/marker.png" alt="marker"/>
+    </div>
+      <input type="text" placeholder="pincode" style="border-right:none;border-left: none;border-top: none; padding: 10px;font-size: 18px;display: flex;">
+    </div>
+    <div id="addtocart"><p id="addtocart-text">ADD TO CART</p></div>
+    <h3>Product Description</h3>
+    <div class="ProductDescription">
+    </div>
+    <h3>Additional Info</h3>
+    <div class="AdditionalInfo">
+    </div>
+        </div>
+      </div>
+          </div>
+        </div>
+    </div>
+    <h2 class="category-head" style="margin-left:-20px ;">Style with</h2>
+    <div class="trending">
+    </div>
+    <footer class="footer">
+        <div class="containerf">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Men</a></li>
+                        <li><a href="">Women</a></li>
+                        <li><a href="">Kids</a></li>
+                        <li><a href="">Beauty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact us</h4>
+                    <ul>
+                        <li><a>+91 xxxxx xxxxx</a></li>
+                        <li><a>+91 xxxxx xxxxx</a></li>
+                        <li><a>+91 xxxxx xxxxx</a></li>
+                        <li><a>+91 xxxxx xxxxx</a></li>
+                        <li><a>+91 xxxxx xxxxx</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Stores</h4>
+                    <ul>
+                        <li><a style="text-transform:none;">Vijayawada</a></li>
+                        <li><a style="text-transform:none;">Hyderabad</a></li>
+                        <li><a style="text-transform:none;">Vishakapatnam</a></li>
+                        <li><a style="text-transform:none;">Chennai</a></li>
+                        <li><a style="text-transform:none;">Bengaluru</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+<script>
+   document.getElementById('searchInput').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          search();
+        }
+      });
+      async function search(){
+        const searchQuery = document.getElementById('searchInput').value;
+        window.location.href = `searchresults.html?query=${searchQuery}`;
+      }
+  var wishlist = document.getElementById('btnh1');
+  var addtocart = document.getElementById('addtocart');
+  var addtocarttext = document.getElementById('addtocart-text');
+  var obj=JSON.parse(localStorage.getItem("item"));
+
+  addtocart.addEventListener('click', AddtoCart);
+  function addTocart(item) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    const newKey = Object.keys(cart).length;
+    cart[newKey] = item;
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function removefrmcart(item) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    for (const key in cart) {
+      if (cart[key] === item) {
+            delete cart[key];
+            break;
+        }
+    }
+    let reindexedcart = {};
+    let newIndex = 0;
+    for (const key in cart) {
+        reindexedcart[newIndex++] = cart[key];
+    }
+    localStorage.setItem('cart', JSON.stringify(reindexedcart));
+}
+function selectSize(element) {
+  document.querySelectorAll('.size-item').forEach(item => item.classList.remove('selected'));
+  element.classList.add('selected');
+  selectedSize = element.getAttribute('data-size');
+}
+  function AddtoCart(){
+    const addtocarttext = document.getElementById("addtocart-text");
+  if (!selectedSize) {
+    alert("Please select a size before adding to cart.");
+    return;
+  }
+  
+  if (addtocarttext.innerHTML === "ADD TO CART") {
+    addtocarttext.innerHTML = "REMOVE ITEM";
+    addTocart(obj);
+    alert("Product is added to cart");
+  } else {
+    addtocarttext.innerHTML = "ADD TO CART";
+    removefrmcart(obj);
+    alert("Product is removed from cart");
+  }
+  }
+  function Toggle1(){
+          if (wishlist.style.color =="red") {
+            wishlist.style.color = "lightgrey"
+            removeFromWishlist(obj);
+            alert("Product is removed from wishlist");
+          }
+          else{
+            wishlist.style.color = "red"
+            addToWishlist(obj);
+            alert("Product is added to wishlist");
+          }
+  }
+function addToWishlist(item) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || {};
+    const newKey = Object.keys(wishlist).length;
+    wishlist[newKey] = JSON.stringify(item);
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+}
+
+function removeFromWishlist(item) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || {};
+    for (const key in wishlist) {
+      if (wishlist[key] === JSON.stringify(item)) {
+            delete wishlist[key];
+            break;
+        }
+    }
+    let reindexedWishlist = {};
+    let newIndex = 0;
+    for (const key in wishlist) {
+        reindexedWishlist[newIndex++] = wishlist[key];
+    }
+    localStorage.setItem('wishlist', JSON.stringify(reindexedWishlist));
+}
+
+
+    async function fetchProductDetails(productCode) {
+        const url = `https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/detail?lang=en&country=in&productcode=${productCode}`;
+        const options = {
+          method: 'GET',
+          headers: {
+              'x-rapidapi-key': 'a535860cbcmshc5edf28f91570ecp177c5djsnc6bb3fdf3002',
+              'x-rapidapi-host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
+          }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const data = await response.json();
+            displayProductDetails(data);
+        } catch (error) {
+            // console.error('Error fetching product details:', error);
+        }
+    }
+    const colorItems = document.querySelectorAll('.color-item');
+    let selectedColor = null;
+
+    colorItems.forEach(item => {
+      item.addEventListener('click', function() {
+        if (item.classList.contains('selected')) {
+          item.classList.remove('selected');
+          selectedColor = null;
+        } else {
+          colorItems.forEach(i => i.classList.remove('selected'));
+          item.classList.add('selected');
+          selectedColor = item.querySelector('div:last-child').style.backgroundColor;
+        }
+      });
+    });
+
+    const sizeItems = document.querySelectorAll('.size-item');
+    let selectedSize = null;
+    sizeItems.forEach(item => {
+      item.addEventListener('click', function() {
+        if (item.classList.contains('selected')) {
+          item.classList.remove('selected');
+          selectedSize = null;
+        } else {
+          sizeItems.forEach(i => i.classList.remove('selected'));
+          item.classList.add('selected');
+          selectedSize = item.querySelector('.size-text').textContent;
+        }
+      });
+    });
+    function createProductDescription(productDetails,article) {
+      container = document.getElementsByClassName('ProductDescription')[0];
+
+      container.innerHTML = `
+      <ul>
+        <li><strong>Article number : ${productDetails.product.code}</strong></li>
+        <li><strong>Fit : </strong>${productDetails.product.fits}</li>
+        <li><strong>Price (MRP) : </strong>Rs.${productDetails.product.whitePrice.price} incl. of all taxes</li>
+        <li><strong>Country of Production : </strong>${productDetails.product.productCountryOfProduction}</li>
+        <li><strong>Common greneric name : </strong>${productDetails.product.presentationTypes}</li>
+        <li><strong>Net Quantity : </strong>${article.netQuantity}</li>
+        <li><strong>Manufactured by : </strong>N/A</li>
+        <li><strong>Marketed and imported by : </strong>${article.importedBy}</li>
+        <li><strong>Date of manufacture : </strong>${productDetails.product.yearOfProduction}</li>
+        <li><strong>Date of import : </strong>09-2024</li>
+        <li><strong>Customer Service : </strong>In case of consumer complaint, write to H&M Hennes & Mauritz Retail PVT. Ltd, A Wing, D3, 2nd Floor, District Center, Saket, New Delhi 110017, India or call Telephone: 1800-889-8000. For online and store complaints email customerservice.in@hm.com.</li>
+        <li><strong>Disclaimer : </strong>This information is based on sample of the product displayed on website. There may be change in the information on label attached to the product delivered to the customer due to size chosen, date of import, name of manufacturer (in case of manufacturing in India), country of manufacture, etc. The exact detail relevant to the product delivered to the customer will reflect in the label attached to the product.</li>
+      </ul>
+      `;
+    }
+    function createAdditionalInfo(productDetails, article) {
+      container = document.getElementsByClassName('AdditionalInfo')[0];
+      const list = document.createElement('ol');
+      article.careInstructions.forEach((ele) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = ele;
+        list.appendChild(listItem);
+      });
+      container.innerHTML = `
+        <ul>
+          <li>You too can help the environment and make fashion more sustainable. Bring unwanted clothes or home textiles to any H&M store and they will be reworn, reused or recycled.</li>
+          <li><strong>Care instructions</strong></li>
+        </ul>
+      `;
+      container.querySelector('ul').appendChild(list);
+    }
+
+    function displayProductDetails(data) {
+        lcldata=localStorage.getItem("item");
+        product=JSON.parse(lcldata)
+        document.getElementById('productName').textContent = product.name;
+        document.getElementById('productDescription').textContent = data.product.description;
+        const imgcont = document.getElementById('imageContainer');
+        const article = data.product.articlesList.find((article) => article.code === data.product.code);
+        const sizeOptionsContainer = document.querySelector('.size-options');
+          article.variantsList.forEach((ele) => {
+            const sizeItem = document.createElement('div');
+            sizeItem.className = 'size-item';
+            sizeItem.setAttribute('data-size', ele.size.name);
+            sizeItem.setAttribute('onclick', 'selectSize(this)');
+            const innerSizeBox = document.createElement('div');
+            innerSizeBox.className = 'inner-size-box';
+            const sizeText = document.createElement('div');
+            sizeText.className = 'size-text';
+            sizeText.textContent = ele.size.name;
+            sizeItem.appendChild(innerSizeBox);
+            sizeItem.appendChild(sizeText);
+            sizeOptionsContainer.appendChild(sizeItem);
+          });
+        article.galleryDetails.forEach(image => {
+            const div = document.createElement('div');
+            div.className = 'imageItem';
+            const imgElement = document.createElement('img');
+            imgElement.src = image.baseUrl; 
+            imgElement.alt = 'Product image'; 
+            div.appendChild(imgElement);
+            imgcont.appendChild(div);
+        });
+        createProductDescription(data,article);
+        createAdditionalInfo(data,article);
+        const trendingContainer = document.querySelector('.trending');
+        article.styleWith.forEach(async (item) => {
+          const trendingItem = document.createElement('div');
+          trendingItem.classList.add('trending-item');
+          trendingItem.setAttribute('data-id', item.code);
+          const url = `https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/detail?lang=en&country=in&productcode=${item.code}`;
+          const options = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': 'a535860cbcmshc5edf28f91570ecp177c5djsnc6bb3fdf3002',
+                'x-rapidapi-host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
+            }
+          };
+        
+          var result;
+          try {
+              const response = await fetch(url, options);
+              dat = await response.json();
+              result = dat.product.articlesList.find((article) => article.code === item.code)
+          } catch (error) {
+              // console.error('Error fetching product details:', error);
+          }
+          trendingItem.innerHTML = `
+            <div class="trending-item-img" style="background-image: url('${result.galleryDetails[0].baseUrl}');"></div>
+            <div>
+              <p class="info-text">${result.name}</p>
+              <p class="price-text">₹${parseFloat(result.whitePrice.price).toFixed(2)}</p>
+            </div>
+          `;
+
+          trendingContainer.appendChild(trendingItem);
+        });
+        document.getElementById('productPrice').textContent = `₹${parseFloat(product.price.value).toFixed(2)}`;
+    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const productCode = urlParams.get('id');
+
+    if (productCode) {
+        fetchProductDetails(productCode);
+    } else {
+        // console.error('No product code found in URL');
+    }
+</script>
+
+</body>
+</html>
